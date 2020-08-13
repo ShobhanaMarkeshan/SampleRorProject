@@ -1,0 +1,86 @@
+<div class="row">
+  <div class="col-md-12">
+    <%# <%= form_tag :action => 'create' do %>
+      <%# <%= form_with modal: @user do |form| %>
+        <%= form_with model: @user do |form| %>
+            <%=  @user.errors.any? %>
+            <%=  @user.errors.full_messages %>
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@user.errors.count, "error") %> prohibited this address from being saved:</h2>
+
+              <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <div class="control-label col-md-2">
+                <%# <label for = "user_firstName">First Name</label> %>
+                <%= form.label :firstName, 'First Name' %>
+              </div>
+              <div class="col-md-8">
+                <%= form.text_field :firstName, class: "form-control", placeholder: "Enter First Name", autofocus: true, id: :first_name, required: true  %>
+                <%# <%= text_field 'users', 'firstName', class: "form-control", placeholder: "Enter First Name" %>
+              </div>
+            </div>
+            <div class="col-md-6 form-group">
+              <div class="control-label col-md-2">
+                <%= form.label :lastName, 'Last Name' %>
+              </div>
+              <div class="col-md-8">
+                <%= form.text_field :lastName, class: "form-control", placeholder: "Enter Last Name", id: :last_name, required: true  %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <div class="control-label col-md-2">
+                <%= form.label :userName, 'User Name' %>
+              </div>
+              <div class="col-md-8">
+                <%= form.text_field :userName, class: "form-control", placeholder: "Enter User Name", required: true %>
+              </div>
+            </div>
+            <div class="col-md-6 form-group">
+              <div class="control-label col-md-2">
+                <%= form.label :mobile, 'Mobile' %>
+              </div>
+              <div class="col-md-8">
+                <%= form.number_field :mobile, class: "form-control", placeholder: "Enter Mobile", required: true %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <div class="control-label col-md-2">
+                <%= form.label :email, 'Email' %>
+              </div>
+              <div class="col-sm-8">
+                <%= form.text_field :email, class: "form-control", placeholder: "Enter Email", required: true %>
+              </div>
+            </div>
+            <div class="col-md-6 form-group">
+              <div class="control-label col-md-2">
+                <%= form.label :bio, 'Description' %>
+              </div>
+              <div class="col-md-8">
+                <%= form.text_area :bio, class: "form-control", placeholder: "Enter bio", required: true %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <%= form.submit 'Save', class: 'btn btn-primary btn-lg'%>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>

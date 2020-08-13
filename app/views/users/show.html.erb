@@ -1,0 +1,62 @@
+<div class="container-fluid mt-5">
+
+  <%= link_to 'Back', users_path, class: 'btn btn-primary' %>
+
+  <h1 align="center"><%= @user.userName %>'s Detail</h1>
+
+  <table class="table">
+    <tr>
+      <td>
+        <label>First Name: </label>
+      </td>
+      <td>
+        <%= @user.firstName%>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>Last Name: </label>
+      </td>
+      <td>
+        <%= @user.lastName%>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>User Name: </label>
+      </td>
+      <td>
+        <%= @user.userName%>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>Mobile: </label>
+      </td>
+      <td>
+        <%= @user.mobile%>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>Email: </label>
+      </td>
+      <td>
+        <%= @user.email%>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>Bio: </label>
+      </td>
+      <td>
+        <%= @user.bio%>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,8 @@
+<div class='container-fluid mt-5'>
+  <%= link_to 'Back', users_path, class: 'btn btn-primary' %>
+  <%= @user.errors %>
+  <%= @user.errors.any? %>
+  <%= @user.errors.full_messages %>
+  <h1>Add User</h1>
+  <%= render 'form' %>
+</div>
